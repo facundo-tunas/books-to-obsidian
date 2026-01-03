@@ -30,7 +30,7 @@ export function bookToMarkdown(book: Book): string {
   const authors = book.authors.map((a) => `  - "[[${a}]]"`).join("\n");
 
   return `---
-Title: ${book.title}
+Title: ${sanitizeFilename(book.title)}
 Authors:
 ${authors}
 Read: ${book.status ?? false}
